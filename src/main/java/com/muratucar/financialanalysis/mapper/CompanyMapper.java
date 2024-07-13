@@ -10,6 +10,10 @@ import com.muratucar.financialanalysis.responsedto.CompanyResponse;
 public class CompanyMapper {
 
 	
+	private CompanyMapper() {
+		
+	}
+	
 	 public static Company mapToCompany(CreateCompanyRequest createCompanyRequest) {
 		 
 		  return Company.builder()

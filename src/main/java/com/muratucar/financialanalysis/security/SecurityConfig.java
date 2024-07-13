@@ -35,7 +35,7 @@ public class SecurityConfig {
 	}
 
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	  SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		return http.headers(HeadersConfigurer::disable).csrf(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests(auth -> auth.requestMatchers("/auth/newuser**", "/auth/generateToken/**",
 						"/v3/api-docs/**", "/swagger-ui/**").permitAll().requestMatchers("/company/**").authenticated())
@@ -45,7 +45,7 @@ public class SecurityConfig {
 	}
 
 	@Bean
-	public AuthenticationProvider authenticationProvider() {
+	  AuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
 		authenticationProvider.setUserDetailsService(userService);
 		authenticationProvider.setPasswordEncoder(passwordEncoder);
@@ -53,12 +53,12 @@ public class SecurityConfig {
 	}
 
 	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+	  AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
 		return configuration.getAuthenticationManager();
 	}
 
 	@Bean
-	public PasswordEncoder passwordEncoder() {
+	  PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 }

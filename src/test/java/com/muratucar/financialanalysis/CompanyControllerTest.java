@@ -46,8 +46,7 @@ class CompanyControllerTest {
 	void testCreateCompany() {
 		CreateCompanyRequest companyRequest = new CreateCompanyRequest("Test Company", "New York", "USA", "Technology",
 				"+1-123-456-7890", LocalDate.of(2000, 8, 15), "https://www.testcompany.com", "contact@testcompany.com",
-				500L, new CreateAddressRequest("123 Main St", "Apt 1", "New York", "NY", "10001"), // address
-				List.of(new Employee()));
+				500L, new CreateAddressRequest("123 Main St", "Apt 1", "New York", "NY", "10001"));
 
 		when(companyService.createCompany(ArgumentMatchers.any())).thenReturn(ResponseEntity.ok("Company Created"));
 
@@ -65,8 +64,7 @@ class CompanyControllerTest {
 
 		CreateCompanyRequest companyRequest = new CreateCompanyRequest("Test Company", "New York", "USA", "Technology",
 				"+1-123-456-7890", LocalDate.of(2000, 8, 15), "https://www.testcompany.com", "contact@testcompany.com",
-				500L, new CreateAddressRequest("123 Main St", "Apt 1", "New York", "NY", "10001"), // address
-				List.of(new Employee()));
+				500L, new CreateAddressRequest("123 Main St", "Apt 1", "New York", "NY", "10001"));
 
 		when(companyService.createCompany(companyRequest))
 				.thenReturn(ResponseEntity.badRequest().body("Company Name already exists"));

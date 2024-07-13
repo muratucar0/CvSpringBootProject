@@ -6,6 +6,10 @@ import com.muratucar.financialanalysis.requestdto.CreateAddressRequest;
 public class AddressMapper {
 
 	
+	 private AddressMapper() {
+		 
+	 }
+	
 	
 	public static Address mapToAddress(CreateAddressRequest createAddressRequest) {
 		 

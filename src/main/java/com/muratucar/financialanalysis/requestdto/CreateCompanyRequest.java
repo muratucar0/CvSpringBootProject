@@ -45,9 +45,9 @@ public record CreateCompanyRequest(
 		
 		@NotNull 
 		@Valid
-		CreateAddressRequest address,
+		CreateAddressRequest address 
 		 
-		  List<Employee> employees
+		  
 		){
 
 	 

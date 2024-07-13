@@ -11,7 +11,7 @@ import io.swagger.v3.oas.models.info.Info;
 public class SwaggerConfig {
 
     @Bean
-    public OpenAPI customOpenAPI() {
+      OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
                         .title("Financial Analysis API")
@@ -20,7 +20,7 @@ public class SwaggerConfig {
     }
 
     @Bean
-    public GroupedOpenApi publicApi() {
+      GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
                 .group("financialanalysis")
                 .pathsToMatch("/**")
