@@ -17,3 +17,5 @@ Request-Response Design Pattern
 Implementing a design pattern for handling HTTP requests and responses.
 Company Service
 Implementing business logic and operations related to company entities.
+
+!!! The DTO needs to be corrected to allow multiple company entries, and these entries should be taken as IDs rather than objects.
